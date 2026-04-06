@@ -1,0 +1,151 @@
+{
+  "verseId": "genesis-1-1",
+  "reference": {
+    "book": "Genesis",
+    "chapter": 1,
+    "verse": 1
+  },
+  "sourceText": "In the beginning God created the heaven and the earth.",
+  "tokens": [
+    {
+      "id": "tok_gn11_1",
+      "verseId": "genesis-1-1",
+      "order": 0,
+      "surfaceText": "In",
+      "normalizedText": "in",
+      "partOfSpeech": "preposition",
+      "isProperNoun": false,
+      "isEditorial": false
+    },
+    {
+      "id": "tok_gn11_2",
+      "verseId": "genesis-1-1",
+      "order": 1,
+      "surfaceText": "the",
+      "normalizedText": "the",
+      "partOfSpeech": "article",
+      "isProperNoun": false,
+      "isEditorial": false
+    },
+    {
+      "id": "tok_gn11_3",
+      "verseId": "genesis-1-1",
+      "order": 2,
+      "surfaceText": "beginning",
+      "normalizedText": "beginning",
+      "partOfSpeech": "noun",
+      "isProperNoun": false,
+      "isEditorial": false
+    },
+    {
+      "id": "tok_gn11_4",
+      "verseId": "genesis-1-1",
+      "order": 3,
+      "surfaceText": "God",
+      "normalizedText": "god",
+      "partOfSpeech": "noun",
+      "isProperNoun": true,
+      "isEditorial": false
+    },
+    {
+      "id": "tok_gn11_5",
+      "verseId": "genesis-1-1",
+      "order": 4,
+      "surfaceText": "created",
+      "normalizedText": "created",
+      "partOfSpeech": "verb",
+      "isProperNoun": false,
+      "isEditorial": false
+    },
+    {
+      "id": "tok_gn11_6",
+      "verseId": "genesis-1-1",
+      "order": 5,
+      "surfaceText": "the",
+      "normalizedText": "the",
+      "partOfSpeech": "article",
+      "isProperNoun": false,
+      "isEditorial": false
+    },
+    {
+      "id": "tok_gn11_7",
+      "verseId": "genesis-1-1",
+      "order": 6,
+      "surfaceText": "heaven",
+      "normalizedText": "heaven",
+      "partOfSpeech": "noun",
+      "isProperNoun": false,
+      "isEditorial": false
+    },
+    {
+      "id": "tok_gn11_8",
+      "verseId": "genesis-1-1",
+      "order": 7,
+      "surfaceText": "and",
+      "normalizedText": "and",
+      "partOfSpeech": "conjunction",
+      "isProperNoun": false,
+      "isEditorial": false
+    },
+    {
+      "id": "tok_gn11_9",
+      "verseId": "genesis-1-1",
+      "order": 8,
+      "surfaceText": "the",
+      "normalizedText": "the",
+      "partOfSpeech": "article",
+      "isProperNoun": false,
+      "isEditorial": false
+    },
+    {
+      "id": "tok_gn11_10",
+      "verseId": "genesis-1-1",
+      "order": 9,
+      "surfaceText": "earth.",
+      "normalizedText": "earth",
+      "partOfSpeech": "noun",
+      "isProperNoun": false,
+      "isEditorial": false
+    }
+  ],
+  "tokenAnnotations": [
+    {
+      "id": "ann_gn11_1",
+      "tokenId": "tok_gn11_4",
+      "type": "emoji",
+      "value": "☝️",
+      "label": "God",
+      "placement": "above",
+      "orderIndex": 0
+    }
+  ],
+  "tokenLinks": [],
+  "verseAnnotations": [
+    {
+      "id": "note_gn11_1",
+      "verseId": "genesis-1-1",
+      "category": "translation",
+      "body": "Opening creation statement."
+    }
+  ],
+  "verseMedia": [],
+  "editorLayout": {
+    "annotationPlacements": {
+      "ann_gn11_1": {
+        "region": "above",
+        "xOffset": 0,
+        "yOffset": -2
+      }
+    },
+    "notePanelPlacement": "right",
+    "mediaOrder": []
+  },
+  "metadata": {
+    "createdAt": "2026-04-05T12:00:00.000Z",
+    "updatedAt": "2026-04-05T12:00:00.000Z",
+    "createdBy": "system",
+    "updatedBy": "system",
+    "version": 1,
+    "status": "draft"
+  }
+}

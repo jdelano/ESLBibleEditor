@@ -1,0 +1,29 @@
+{
+  "name": "kjveasy-isl-editor",
+  "private": true,
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=24.14.1",
+    "npm": ">=11"
+  },
+  "scripts": {
+    "install:all": "npm install && npm --prefix apps/api install && npm --prefix apps/editor-web install",
+    "dev": "npm --prefix apps/editor-web run dev",
+    "build": "npm --prefix apps/editor-web run build",
+    "test": "npm --prefix apps/editor-web run test",
+    "dev:api": "npm --prefix apps/api run dev",
+    "build:api": "npm --prefix apps/api run build",
+    "test:api": "npm --prefix apps/api run test",
+    "dev:full": "concurrently \"npm --prefix apps/api run dev\" \"npm --prefix apps/editor-web run dev\""
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.21",
+    "@types/react-dom": "^18.3.7",
+    "concurrently": "^7.6.0"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "verseId": "john-3-17",
+  "reference": {
+    "book": "John",
+    "chapter": 3,
+    "verse": 17
+  },
+  "sourceText": "For God sent not his Son into the world to condemn the world; but that the world through him might be saved.",
+  "tokens": [
+    { "id": "tok_jn317_1", "verseId": "john-3-17", "order": 0, "surfaceText": "For", "normalizedText": "for", "partOfSpeech": "conjunction", "isProperNoun": false, "isEditorial": false },
+    { "id": "tok_jn317_2", "verseId": "john-3-17", "order": 1, "surfaceText": "God", "normalizedText": "god", "partOfSpeech": "noun", "isProperNoun": true, "isEditorial": false },
+    { "id": "tok_jn317_3", "verseId": "john-3-17", "order": 2, "surfaceText": "sent", "normalizedText": "sent", "partOfSpeech": "verb", "isProperNoun": false, "isEditorial": false },
+    { "id": "tok_jn317_4", "verseId": "john-3-17", "order": 3, "surfaceText": "not", "normalizedText": "not", "partOfSpeech": "adverb", "isProperNoun": false, "isEditorial": false },
+    { "id": "tok_jn317_5", "verseId": "john-3-17", "order": 4, "surfaceText": "his", "normalizedText": "his", "partOfSpeech": "pronoun", "isProperNoun": false, "isEditorial": false },
+    { "id": "tok_jn317_6", "verseId": "john-3-17", "order": 5, "surfaceText": "Son", "normalizedText": "son", "partOfSpeech": "noun", "isProperNoun": false, "isEditorial": false },
+    { "id": "tok_jn317_7", "verseId": "john-3-17", "order": 6, "surfaceText": "into", "normalizedText": "into", "partOfSpeech": "preposition", "isProperNoun": false, "isEditorial": false },
+    { "id": "tok_jn317_8", "verseId": "john-3-17", "order": 7, "surfaceText": "the", "normalizedText": "the", "partOfSpeech": "article", "isProperNoun": false, "isEditorial": false },
+    { "id": "tok_jn317_9", "verseId": "john-3-17", "order": 8, "surfaceText": "world", "normalizedText": "world", "partOfSpeech": "noun", "isProperNoun": false, "isEditorial": false },
+    { "id": "tok_jn317_10", "verseId": "john-3-17", "order": 9, "surfaceText": "to", "normalizedText": "to", "partOfSpeech": "preposition", "isProperNoun": false, "isEditorial": false },
+    { "id": "tok_jn317_11", "verseId": "john-3-17", "order": 10, "surfaceText": "condemn", "normalizedText": "condemn", "partOfSpeech": "verb", "isProperNoun": false, "isEditorial": false },
+    { "id": "tok_jn317_12", "verseId": "john-3-17", "order": 11, "surfaceText": "the", "normalizedText": "the", "partOfSpeech": "article", "isProperNoun": false, "isEditorial": false },
+    { "id": "tok_jn317_13", "verseId": "john-3-17", "order": 12, "surfaceText": "world;", "normalizedText": "world", "partOfSpeech": "noun", "isProperNoun": false, "isEditorial": false },
+    { "id": "tok_jn317_14", "verseId": "john-3-17", "order": 13, "surfaceText": "but", "normalizedText": "but", "partOfSpeech": "conjunction", "isProperNoun": false, "isEditorial": false },
+    { "id": "tok_jn317_15", "verseId": "john-3-17", "order": 14, "surfaceText": "that", "normalizedText": "that", "partOfSpeech": "conjunction", "isProperNoun": false, "isEditorial": false },
+    { "id": "tok_jn317_16", "verseId": "john-3-17", "order": 15, "surfaceText": "the", "normalizedText": "the", "partOfSpeech": "article", "isProperNoun": false, "isEditorial": false },
+    { "id": "tok_jn317_17", "verseId": "john-3-17", "order": 16, "surfaceText": "world", "normalizedText": "world", "partOfSpeech": "noun", "isProperNoun": false, "isEditorial": false },
+    { "id": "tok_jn317_18", "verseId": "john-3-17", "order": 17, "surfaceText": "through", "normalizedText": "through", "partOfSpeech": "preposition", "isProperNoun": false, "isEditorial": false },
+    { "id": "tok_jn317_19", "verseId": "john-3-17", "order": 18, "surfaceText": "him", "normalizedText": "him", "partOfSpeech": "pronoun", "isProperNoun": false, "isEditorial": false },
+    { "id": "tok_jn317_20", "verseId": "john-3-17", "order": 19, "surfaceText": "might", "normalizedText": "might", "partOfSpeech": "verb", "isProperNoun": false, "isEditorial": false },
+    { "id": "tok_jn317_21", "verseId": "john-3-17", "order": 20, "surfaceText": "be", "normalizedText": "be", "partOfSpeech": "verb", "isProperNoun": false, "isEditorial": false },
+    { "id": "tok_jn317_22", "verseId": "john-3-17", "order": 21, "surfaceText": "saved.", "normalizedText": "saved", "partOfSpeech": "verb", "isProperNoun": false, "isEditorial": false }
+  ],
+  "tokenAnnotations": [
+    { "id": "ann_jn317_1", "tokenId": "tok_jn317_2", "type": "emoji", "value": "☝️", "label": "God", "placement": "above", "orderIndex": 0 },
+    { "id": "ann_jn317_2", "tokenId": "tok_jn317_22", "type": "meaning", "value": "SAVE", "label": "meaning", "placement": "above", "orderIndex": 0 }
+  ],
+  "tokenLinks": [
+    { "id": "link_jn317_1", "sourceTokenId": "tok_jn317_19", "targetTokenId": "tok_jn317_6", "type": "antecedent", "label": "him -> Son", "renderingHint": "curved-arrow" }
+  ],
+  "verseAnnotations": [
+    { "id": "note_jn317_1", "verseId": "john-3-17", "category": "context", "body": "Emphasize rescue rather than condemnation." }
+  ],
+  "verseMedia": [],
+  "editorLayout": {
+    "annotationPlacements": {
+      "ann_jn317_1": { "region": "above", "xOffset": 0, "yOffset": -4 },
+      "ann_jn317_2": { "region": "below", "xOffset": 0, "yOffset": 4 }
+    },
+    "notePanelPlacement": "right",
+    "mediaOrder": []
+  },
+  "metadata": {
+    "createdAt": "2026-04-05T12:00:00.000Z",
+    "updatedAt": "2026-04-05T12:00:00.000Z",
+    "createdBy": "system",
+    "updatedBy": "system",
+    "version": 1,
+    "status": "draft"
+  }
+}

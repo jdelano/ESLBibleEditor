@@ -1,0 +1,217 @@
+{
+  "verseId": "john-3-16",
+  "reference": {
+    "book": "John",
+    "chapter": 3,
+    "verse": 16
+  },
+  "sourceText": "For God so loved the world that he gave his only begotten Son.",
+  "tokens": [
+    {
+      "id": "tok_jn316_1",
+      "verseId": "john-3-16",
+      "order": 0,
+      "surfaceText": "For",
+      "normalizedText": "for",
+      "partOfSpeech": "conjunction",
+      "isProperNoun": false,
+      "isEditorial": false
+    },
+    {
+      "id": "tok_jn316_2",
+      "verseId": "john-3-16",
+      "order": 1,
+      "surfaceText": "God",
+      "normalizedText": "god",
+      "partOfSpeech": "noun",
+      "isProperNoun": true,
+      "isEditorial": false
+    },
+    {
+      "id": "tok_jn316_3",
+      "verseId": "john-3-16",
+      "order": 2,
+      "surfaceText": "so",
+      "normalizedText": "so",
+      "partOfSpeech": "adverb",
+      "isProperNoun": false,
+      "isEditorial": false
+    },
+    {
+      "id": "tok_jn316_4",
+      "verseId": "john-3-16",
+      "order": 3,
+      "surfaceText": "loved",
+      "normalizedText": "loved",
+      "partOfSpeech": "verb",
+      "isProperNoun": false,
+      "isEditorial": false
+    },
+    {
+      "id": "tok_jn316_5",
+      "verseId": "john-3-16",
+      "order": 4,
+      "surfaceText": "the",
+      "normalizedText": "the",
+      "partOfSpeech": "article",
+      "isProperNoun": false,
+      "isEditorial": false
+    },
+    {
+      "id": "tok_jn316_6",
+      "verseId": "john-3-16",
+      "order": 5,
+      "surfaceText": "world",
+      "normalizedText": "world",
+      "partOfSpeech": "noun",
+      "isProperNoun": false,
+      "isEditorial": false
+    },
+    {
+      "id": "tok_jn316_7",
+      "verseId": "john-3-16",
+      "order": 6,
+      "surfaceText": "that",
+      "normalizedText": "that",
+      "partOfSpeech": "conjunction",
+      "isProperNoun": false,
+      "isEditorial": false
+    },
+    {
+      "id": "tok_jn316_8",
+      "verseId": "john-3-16",
+      "order": 7,
+      "surfaceText": "he",
+      "normalizedText": "he",
+      "partOfSpeech": "pronoun",
+      "isProperNoun": false,
+      "isEditorial": false
+    },
+    {
+      "id": "tok_jn316_9",
+      "verseId": "john-3-16",
+      "order": 8,
+      "surfaceText": "gave",
+      "normalizedText": "gave",
+      "partOfSpeech": "verb",
+      "isProperNoun": false,
+      "isEditorial": false
+    },
+    {
+      "id": "tok_jn316_10",
+      "verseId": "john-3-16",
+      "order": 9,
+      "surfaceText": "his",
+      "normalizedText": "his",
+      "partOfSpeech": "pronoun",
+      "isProperNoun": false,
+      "isEditorial": false
+    },
+    {
+      "id": "tok_jn316_11",
+      "verseId": "john-3-16",
+      "order": 10,
+      "surfaceText": "only",
+      "normalizedText": "only",
+      "partOfSpeech": "adjective",
+      "isProperNoun": false,
+      "isEditorial": false
+    },
+    {
+      "id": "tok_jn316_12",
+      "verseId": "john-3-16",
+      "order": 11,
+      "surfaceText": "begotten",
+      "normalizedText": "begotten",
+      "partOfSpeech": "adjective",
+      "isProperNoun": false,
+      "isEditorial": false
+    },
+    {
+      "id": "tok_jn316_13",
+      "verseId": "john-3-16",
+      "order": 12,
+      "surfaceText": "Son.",
+      "normalizedText": "son",
+      "partOfSpeech": "noun",
+      "isProperNoun": false,
+      "isEditorial": false
+    }
+  ],
+  "tokenAnnotations": [
+    {
+      "id": "ann_jn316_1",
+      "tokenId": "tok_jn316_2",
+      "type": "emoji",
+      "value": "☝️",
+      "label": "God",
+      "placement": "above",
+      "orderIndex": 0
+    },
+    {
+      "id": "ann_jn316_2",
+      "tokenId": "tok_jn316_4",
+      "type": "meaning",
+      "value": "LOVE",
+      "label": "meaning",
+      "placement": "above",
+      "orderIndex": 0
+    }
+  ],
+  "tokenLinks": [
+    {
+      "id": "link_jn316_1",
+      "sourceTokenId": "tok_jn316_8",
+      "targetTokenId": "tok_jn316_2",
+      "type": "antecedent",
+      "label": "he -> God",
+      "renderingHint": "curved-arrow"
+    }
+  ],
+  "verseAnnotations": [
+    {
+      "id": "note_jn316_1",
+      "verseId": "john-3-16",
+      "category": "context",
+      "body": "Focus on God's action and the gift of the Son."
+    }
+  ],
+  "verseMedia": [
+    {
+      "id": "media_jn316_1",
+      "verseId": "john-3-16",
+      "mediaType": "image",
+      "assetRef": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
+      "caption": "Representative verse image",
+      "altText": "Sunlight over a landscape",
+      "orderIndex": 0,
+      "displayHint": "hero"
+    }
+  ],
+  "editorLayout": {
+    "annotationPlacements": {
+      "ann_jn316_1": {
+        "region": "above",
+        "xOffset": 0,
+        "yOffset": -4
+      },
+      "ann_jn316_2": {
+        "region": "below",
+        "xOffset": 0,
+        "yOffset": 4
+      }
+    },
+    "notePanelPlacement": "right",
+    "mediaOrder": [
+      "media_jn316_1"
+    ]
+  },
+  "metadata": {
+    "createdAt": "2026-04-05T12:00:00.000Z",
+    "updatedAt": "2026-04-05T12:00:00.000Z",
+    "createdBy": "system",
+    "updatedBy": "system",
+    "version": 1,
+    "status": "draft"
+  }
+}
