@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 
 export default defineConfig({
-  base: "./",
+  base: "/ESLBibleEditor/",
   plugins: [react()],
   server: {
     port: Number(process.env.WEB_PORT ?? 5173),
