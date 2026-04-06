@@ -73,6 +73,7 @@ button {
 }
 
 .file-button,
+.topbar-link,
 button {
   border: 0;
   border-radius: 999px;
@@ -80,10 +81,12 @@ button {
   background: #214b6b;
   color: white;
   box-shadow: 0 8px 20px rgba(33, 75, 107, 0.2);
+  text-decoration: none;
 }
 
 button.secondary,
-.file-button {
+.file-button,
+.topbar-link.secondary {
   background: #eef3f8;
   color: #12304a;
   box-shadow: none;

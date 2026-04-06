@@ -2732,6 +2732,7 @@ function App() {
   }
 
   const currentVerse = verse;
+  const tutorialHref = `${import.meta.env.BASE_URL}tutorial.html`;
   const tokenGroupForToken = new Map<string, TokenGroup>();
   currentVerse.tokenGroups.forEach((entry: TokenGroup) => {
     entry.tokenIds.forEach((tokenId) => tokenGroupForToken.set(tokenId, entry));
@@ -3719,6 +3720,9 @@ function renderTokenAnnotationTag(entry: TokenAnnotation | GroupAnnotation, owne
           <p>{message}</p>
         </div>
         <div className="topbar-actions">
+          <a className="topbar-link secondary" href={tutorialHref} target="_blank" rel="noreferrer">
+            Tutorial
+          </a>
           <label className="file-button">
             Import JSON
             <input type="file" accept="application/json" onChange={handleImport} />

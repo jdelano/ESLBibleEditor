@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KJVeasy-ISL Editor Tutorial</title>
+    <style>
+      :root {
+        color: #102033;
+        font-family: "Avenir Next", "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(240, 198, 94, 0.35), transparent 30%),
+          linear-gradient(135deg, #f8f2e7, #eef4f0 45%, #dde8f1 100%);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .page {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 1.25rem;
+      }
+
+      .hero,
+      .card {
+        border-radius: 1.2rem;
+        background: rgba(255, 255, 255, 0.86);
+        border: 1px solid rgba(16, 32, 51, 0.08);
+        box-shadow: 0 18px 40px rgba(35, 61, 91, 0.08);
+      }
+
+      .hero {
+        padding: 1.4rem 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 0.35rem;
+        font-size: clamp(2rem, 4vw, 3rem);
+      }
+
+      .lede {
+        color: #4c5f73;
+        max-width: 70ch;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+      }
+
+      .button-link {
+        display: inline-block;
+        border-radius: 999px;
+        padding: 0.75rem 1rem;
+        text-decoration: none;
+        background: #214b6b;
+        color: white;
+        box-shadow: 0 8px 20px rgba(33, 75, 107, 0.2);
+      }
+
+      .button-link.secondary {
+        background: #eef3f8;
+        color: #12304a;
+        box-shadow: none;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 260px minmax(0, 1fr);
+        gap: 1rem;
+        align-items: start;
+      }
+
+      .toc,
+      .content {
+        padding: 1rem 1.1rem;
+      }
+
+      .toc {
+        position: sticky;
+        top: 1rem;
+      }
+
+      .toc h2 {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .toc a {
+        display: block;
+        padding: 0.35rem 0;
+        color: #214b6b;
+        text-decoration: none;
+      }
+
+      .toc a:hover {
+        text-decoration: underline;
+      }
+
+      .content section + section {
+        margin-top: 1.6rem;
+        padding-top: 1.4rem;
+        border-top: 1px solid rgba(16, 32, 51, 0.08);
+      }
+
+      .callout {
+        border-radius: 1rem;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(241, 246, 250, 0.96));
+        border: 1px solid rgba(16, 32, 51, 0.08);
+        padding: 0.9rem 1rem;
+        margin: 0.9rem 0;
+      }
+
+      code {
+        font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+        background: rgba(16, 32, 51, 0.06);
+        border-radius: 0.4rem;
+        padding: 0.1rem 0.35rem;
+      }
+
+      ul,
+      ol {
+        padding-left: 1.2rem;
+      }
+
+      li + li {
+        margin-top: 0.3rem;
+      }
+
+      .mini-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 0.75rem;
+        margin-top: 1rem;
+      }
+
+      .mini-card {
+        border-radius: 1rem;
+        padding: 0.9rem 1rem;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(241, 246, 250, 0.96));
+        border: 1px solid rgba(16, 32, 51, 0.08);
+      }
+
+      .muted {
+        color: #5a6c80;
+      }
+
+      @media (max-width: 860px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .toc {
+          position: static;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="hero">
+        <h1>KJVeasy-ISL Editor Tutorial</h1>
+        <p class="lede">
+          This guide walks through the whole alpha workflow: choosing a verse, adding token and group annotations, making
+          links, using colors and part-of-speech tagging, working with margin notes, importing and exporting JSON, and fixing
+          validation issues.
+        </p>
+        <div class="hero-actions">
+          <a class="button-link" href="./">Open Editor</a>
+          <a class="button-link secondary" href="#quick-start">Jump to Quick Start</a>
+        </div>
+      </div>
+
+      <div class="grid">
+        <nav class="card toc">
+          <h2>Contents</h2>
+          <a href="#quick-start">Quick start</a>
+          <a href="#layout">Layout overview</a>
+          <a href="#navigation">Choose a verse</a>
+          <a href="#tokens">Work with tokens</a>
+          <a href="#annotations">Add and edit annotations</a>
+          <a href="#groups">Groups and grouped lanes</a>
+          <a href="#margin-notes">Margin notes</a>
+          <a href="#links">Pronoun and antecedent links</a>
+          <a href="#colors-pos">POS tags and word colors</a>
+          <a href="#images">Paste and edit images</a>
+          <a href="#toolbar">Toolbar reference</a>
+          <a href="#validation">Validation and repair</a>
+          <a href="#import-export">Import, export, and save</a>
+          <a href="#tips">Practical tips</a>
+        </nav>
+
+        <main class="card content">
+          <section id="quick-start">
+            <h2>Quick start</h2>
+            <ol>
+              <li>Open the editor and choose a <strong>Book</strong>, <strong>Chapter</strong>, and <strong>Verse</strong> in the Bible Browser.</li>
+              <li>If the verse has been edited before, the saved local version opens. If not, the KJV text is loaded and auto-tokenized.</li>
+              <li>Click a token or annotation lane to select where you want to work.</li>
+              <li>Use the toolbar to add annotations, create groups, add margin notes, or make links.</li>
+              <li>Click <strong>Save Verse</strong> when you want to persist the verse in browser storage.</li>
+              <li>Use <strong>Export JSON</strong> to download the current verse, or the toolbar export/publish tools for broader packaging.</li>
+            </ol>
+          </section>
+
+          <section id="layout">
+            <h2>Layout overview</h2>
+            <div class="mini-grid">
+              <div class="mini-card">
+                <h3>Left pane</h3>
+                <p class="muted">Bible Browser. Choose the book, chapter, and verse you want to edit.</p>
+              </div>
+              <div class="mini-card">
+                <h3>Center pane</h3>
+                <p class="muted">Verse canvas. This is where tokens, groups, annotations, links, and margin notes are shown and edited.</p>
+              </div>
+              <div class="mini-card">
+                <h3>Right pane</h3>
+                <p class="muted">Inspector. Shows fields for the currently selected token, annotation, group, link, media item, or slot.</p>
+              </div>
+              <div class="mini-card">
+                <h3>Bottom pane</h3>
+                <p class="muted">Diagnostics. Validation issues appear here with highlight and repair actions.</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="navigation">
+            <h2>Choose a verse</h2>
+            <p>
+              Use the Bible Browser dropdowns to navigate by book, chapter, and verse. The app loads one verse at a time.
+            </p>
+            <div class="callout">
+              <strong>How loading works:</strong> if a verse already exists in local browser storage, the saved version opens. If it does not,
+              the editor pulls the KJV text from <code>kjv.json</code>, tokenizes it, assigns part-of-speech tags, and applies word colors automatically.
+            </div>
+          </section>
+
+          <section id="tokens">
+            <h2>Work with tokens</h2>
+            <p>Each word is shown as a token card. Tokens are the basic editing unit.</p>
+            <ul>
+              <li>Click a token to toggle it on or off.</li>
+              <li>Click multiple tokens in sequence to build a multi-selection.</li>
+              <li>If you click an annotation or lane after selecting tokens, the token selection clears and the new item is selected instead.</li>
+              <li>When multiple tokens are selected, the inspector lets you apply shared edits like POS, color, proper noun, and editorial flags.</li>
+            </ul>
+          </section>
+
+          <section id="annotations">
+            <h2>Add and edit annotations</h2>
+            <p>
+              An annotation is edited directly in its bubble on the canvas. You are not limited to text only. A single annotation can mix
+              text, emoji, and pasted images on one line.
+            </p>
+            <ul>
+              <li>Click an empty annotation lane to select that slot.</li>
+              <li>Use <strong>Add Ann</strong> in the toolbar to create a new annotation in that exact spot.</li>
+              <li>Click the annotation bubble to edit it inline.</li>
+              <li>Type text directly into the bubble.</li>
+              <li>Paste emoji directly into the text while editing.</li>
+              <li>Paste an image from the clipboard to insert a cropped inline image segment.</li>
+            </ul>
+            <div class="callout">
+              <strong>Editing keys:</strong> <code>Enter</code> finishes editing. Arrow keys move between text and inline images. Backspace and delete
+              work across text and image boundaries.
+            </div>
+          </section>
+
+          <section id="groups">
+            <h2>Groups and grouped lanes</h2>
+            <p>
+              Token groups let several contiguous tokens behave like one visual unit while each underlying token still keeps its own identity.
+            </p>
+            <ul>
+              <li>Select contiguous tokens and click <strong>Group</strong> to make a token group.</li>
+              <li>Click <strong>Ungroup</strong> to remove the token group.</li>
+              <li>Inside a group, each annotation row can be <strong>shared across the group</strong> or <strong>split per token</strong>.</li>
+              <li>You can also create grouped annotation subranges inside a token group by selecting contiguous empty or occupied lanes in the same row and pressing <strong>Group</strong>.</li>
+              <li><strong>Split Lane</strong> converts a grouped lane back into split per-token slots.</li>
+            </ul>
+            <div class="callout">
+              <strong>Important:</strong> token grouping and annotation grouping are related but not the same. A token group can exist even if an annotation row is currently split.
+            </div>
+          </section>
+
+          <section id="margin-notes">
+            <h2>Margin notes</h2>
+            <p>
+              Each token group has a dedicated top margin lane. That lane always spans the whole group and is used for the group’s margin note.
+            </p>
+            <ul>
+              <li>Select a group and click <strong>Margin</strong> to create a margin note.</li>
+              <li>Click the margin note lane to edit it inline.</li>
+              <li>The inspector lets you override the margin note color.</li>
+              <li>Margin notes can contain text, emoji, and pasted images just like regular annotations.</li>
+            </ul>
+          </section>
+
+          <section id="links">
+            <h2>Pronoun and antecedent links</h2>
+            <p>
+              Links are drawn as routed arrows below the token cards. They are commonly used for pronouns and antecedents, but you can use them for
+              any token-to-token relationship you need to show.
+            </p>
+            <ul>
+              <li>Drag from one token to another to create a directed link.</li>
+              <li>The drag direction determines the arrow direction.</li>
+              <li>Select a link to edit its label, type, or color in the inspector.</li>
+              <li>Use <strong>Link Left</strong> or <strong>Link Right</strong> in the toolbar to flip the selected arrow direction.</li>
+            </ul>
+          </section>
+
+          <section id="colors-pos">
+            <h2>POS tags and word colors</h2>
+            <p>
+              Tokens can be annotated linguistically using both part-of-speech and semantic color categories.
+            </p>
+            <ul>
+              <li>Select a token and use the inspector to set <strong>Part of Speech</strong>.</li>
+              <li>Select a token and use the inspector to set <strong>Word Color</strong>.</li>
+              <li>Use the toolbar <strong>POS</strong> button to auto-tag the current verse.</li>
+              <li>Use the toolbar <strong>Colors</strong> button to auto-assign word colors.</li>
+            </ul>
+            <div class="callout">
+              <strong>Word color examples:</strong> God, good angels, bad angels, person name, group name, people, things, place name, place, time, and number.
+            </div>
+          </section>
+
+          <section id="images">
+            <h2>Paste and edit images inside annotations</h2>
+            <p>
+              Images are stored inline as base64 segments and are cropped to a small annotation-friendly square.
+            </p>
+            <ul>
+              <li>Select an annotation and paste an image from the clipboard.</li>
+              <li>Images can appear between text segments, not only at the end.</li>
+              <li>Click an image segment to focus it.</li>
+              <li>Use arrow keys to navigate across text and image segments.</li>
+              <li>Use backspace or delete to remove an image.</li>
+              <li>Drag an existing inline image to another position in the same annotation to reinsert it as an image segment.</li>
+            </ul>
+          </section>
+
+          <section id="toolbar">
+            <h2>Toolbar reference</h2>
+            <p>The toolbar is context-sensitive, so some buttons only enable when the right thing is selected.</p>
+            <div class="mini-grid">
+              <div class="mini-card"><strong>Undo / Redo</strong><br /><span class="muted">Step backward or forward through recent edits.</span></div>
+              <div class="mini-card"><strong>Add Note</strong><br /><span class="muted">Create a verse-level note.</span></div>
+              <div class="mini-card"><strong>Add Token</strong><br /><span class="muted">Insert a new token.</span></div>
+              <div class="mini-card"><strong>Add Link</strong><br /><span class="muted">Create a new token link from selection.</span></div>
+              <div class="mini-card"><strong>Add Ann</strong><br /><span class="muted">Add an annotation in the selected token, group, or subgroup lane slot.</span></div>
+              <div class="mini-card"><strong>Ann Up / Ann Down</strong><br /><span class="muted">Move an annotation between rows when the layout allows it.</span></div>
+              <div class="mini-card"><strong>Left / Right</strong><br /><span class="muted">Move the selected annotation or token within its current structure.</span></div>
+              <div class="mini-card"><strong>Split Lane</strong><br /><span class="muted">Convert a grouped annotation row into split per-token slots.</span></div>
+              <div class="mini-card"><strong>Group / Ungroup</strong><br /><span class="muted">Create or remove token groups and grouped annotation spans.</span></div>
+              <div class="mini-card"><strong>Margin</strong><br /><span class="muted">Create a group margin note.</span></div>
+              <div class="mini-card"><strong>POS / Colors</strong><br /><span class="muted">Run auto-tagging on the current verse.</span></div>
+              <div class="mini-card"><strong>Retokenize</strong><br /><span class="muted">Rebuild tokens from the source text. Use carefully.</span></div>
+              <div class="mini-card"><strong>Export Ch / Export Book</strong><br /><span class="muted">Export a chapter or book package.</span></div>
+              <div class="mini-card"><strong>Publish Ch / Publish Book</strong><br /><span class="muted">Create validation-gated publish artifacts.</span></div>
+              <div class="mini-card"><strong>Delete</strong><br /><span class="muted">Delete the selected token, annotation, group, link, note, or media item.</span></div>
+            </div>
+          </section>
+
+          <section id="validation">
+            <h2>Validation and repair</h2>
+            <p>
+              The diagnostics pane beneath the center canvas shows validation errors and warnings for the current verse.
+            </p>
+            <ul>
+              <li>Each issue has a <strong>Highlight</strong> button to jump to the related verse object.</li>
+              <li>Some issues also have a direct repair action.</li>
+              <li><strong>Repair Verse</strong> performs safe cleanup for common stale-reference problems.</li>
+            </ul>
+            <div class="callout">
+              Typical repair cases include orphaned annotations, broken links, stale layout references, and media-order cleanup.
+            </div>
+          </section>
+
+          <section id="import-export">
+            <h2>Import, export, and save</h2>
+            <ul>
+              <li><strong>Save Verse</strong> writes the current verse into browser local storage.</li>
+              <li><strong>Import JSON</strong> replaces the current verse with a verse JSON file.</li>
+              <li><strong>Export JSON</strong> downloads the current verse JSON.</li>
+              <li>Chapter/book export buttons create larger package files based on the local browser data.</li>
+            </ul>
+            <div class="callout">
+              <strong>Single-user model:</strong> this app is browser-first. Data is stored locally in your browser unless you export it.
+              If you open the app on a different machine or browser, you will need to import your JSON there.
+            </div>
+          </section>
+
+          <section id="tips">
+            <h2>Practical tips</h2>
+            <ul>
+              <li>Use groups whenever several tokens should share a common annotation lane or margin note.</li>
+              <li>Use grouped lanes for shared phrases; use split lanes when each token needs its own annotation in the same row.</li>
+              <li>Keep links for relationships under the text and annotations for explanatory content above the text.</li>
+              <li>If layout starts feeling messy, check diagnostics before exporting or publishing.</li>
+              <li>Save often, especially after major grouping or annotation changes.</li>
+            </ul>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+  </html>
